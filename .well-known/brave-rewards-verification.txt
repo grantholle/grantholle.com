@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: grantholle.com
+Token: 0a6dcc0e34537608f86cf215efb6502b616f8ecb636ae9186328a7724a952e51
