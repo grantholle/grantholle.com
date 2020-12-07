@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/grantholle
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://grantholle.com
+  * I am grantholle (https://keybase.io/grantholle) on keybase.
+  * I have a public key ASADbBNujwnUQIi4Ak_0Pt3c-5CJwqjrKju0BOTUfuLbUgo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "0120036c136e8f09d44088b8024ff43edddcfb9089c2a8eb2a3bb404e4d47ee2db520a",
+      "host": "keybase.io",
+      "kid": "0120036c136e8f09d44088b8024ff43edddcfb9089c2a8eb2a3bb404e4d47ee2db520a",
+      "uid": "eac60927852f0bf40f8ffe6884106d19",
+      "username": "grantholle"
+    },
+    "merkle_root": {
+      "ctime": 1607303547,
+      "hash": "00d6d733dea892d5854aff22014f1bcec1defa79da472dc9cb87320826397ca4afe65b5f3da218a217a33e3004f61d5a3d04b8edd21e4ff156d8e5a2da4f0c4e",
+      "hash_meta": "d02ecf93859c2d3f2b65e7b8af8e829bafe6216c65c737c6c95ad2d6affecc4d",
+      "seqno": 18333081
+    },
+    "service": {
+      "entropy": "/ACDMf+CUmg66D1mlhoYANG6",
+      "hostname": "grantholle.com",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "5.5.0"
+  },
+  "ctime": 1607303572,
+  "expire_in": 504576000,
+  "prev": "f388230088e61a4ad470e4e813594365854a757f221a34790783635730b329c1",
+  "seqno": 7,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgA2wTbo8J1ECIuAJP9D7d3PuQicKo6yo7tATk1H7i21IKp3BheWxvYWTESpcCB8Qg84gjAIjmGkrUcOToE1lDZYVKdX8iGjR5B4NjVzCzKcHEIEENm42DQcMEwQ0QwtGpvGcSWGN7cFBYaIbzdEfI2u/EAgHCo3NpZ8RAKRmQ0qp0/fKTg8gAgyN4sSZMuf7lJFYss7nMl9b1xvxsfk0vxET1Wjdt/D1eDk20GPJ8xpi2UQDEq8bSqxJrCahzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIAsI3b9a1299343SsHep5Gv0eh7rpFom3+54Ee6eNtcSo3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/grantholle
+
+==================================================================
