@@ -1,10 +1,18 @@
-{# This page is built with nunjucks! #}
-
-{% set title = 'Home' %}
+{% set title = 'Grant Holle' %}
 {% extends "layout.njk" %}
 
 {% block body %}
-  <main class="container py-8">
-    <h1 class="text-[62px]">This is the {{ title | lower }} page.</h1>
-  </main>
+<div class="flex pt-36 md:pt-0 md:items-center justify-center min-h-screen px-4">
+  <div class="max-w-md mx-auto w-full relative">
+    {# <div class="absolute rounded-full w-64 h-64 overflow-hidden -right-24 -top-48">
+      <img src="/grant-holle.jpg" alt="Grant Holle" class="block w-full">
+    </div> #}
+    <div class="rounded-3xl p-6 shadow-lg bg-opacity-30 backdrop-filter backdrop-blur-sm bg-white">
+      <h1 class="text-3xl font-bold mb-4">hey.</h1>
+      <p class="mb-2">My name is Grant. I think the internet is 💯 and I love to create for it.</p>
+      <p class="mb-2">Right now I'm living in Tianjin and building <a href="https://www.archboard.io" class="font-semibold text-fuchsia-600 hover:text-cyan-600 hover:underline transition">Archboard</a>, a company whose applications make life better for schools.</p>
+      <p>Check out my <a href="https://twitter.com/grantholle_" class="font-semibold text-fuchsia-600 hover:text-cyan-600 hover:underline transition">Twitter</a> and <a href="https://github.com/grantholle" class="font-semibold text-fuchsia-600 hover:text-cyan-600 hover:underline transition">Github</a>.</p>
+    </div>
+  </div>
+</div>
 {% endblock %}

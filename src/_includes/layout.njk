@@ -4,16 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/assets/main.bundle.css">
-  <script src="/assets/main.bundle.js" defer></script>
-  <title>{{ title }} | TEA Stack</title>
+  <meta name="theme-color" content="#eb4481">
+  <meta name="description" content="I'm a dude, he's a dude, she's a dude, we're all dudes.">
+  <link rel="icon" href="/favicon.ico">
+  <title>{{ title }}</title>
   {% block head %}{% endblock %}
 </head>
-<body hx-boost="true" class="{{ 'debug-screens' if env.devMode }}">
-  {% include 'header.njk' %}
+<body hx-boost="true" class="min-h-screen bg-gradient-to-br from-fuchsia-400 to-cyan-400">
   {% block body %}
-    <div class="container py-8">
-      {{ content | safe }}
-    </div>
+    {{ content | safe }}
   {% endblock %}
 </body>
 </html>
