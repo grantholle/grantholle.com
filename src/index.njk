@@ -10,10 +10,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
       if (id) {
         const bg = document.getElementById(id)
-        const action = bg.classList.contains('opacity-100')
+        const action = bg.classList.contains('opacity-0')
           ? 'remove'
           : 'add'
-        bg.classList[action]('opacity-100')
+
+        bg.classList[action]('opacity-0')
       }
     }
 
