@@ -4,10 +4,10 @@ import Card from '../components/Card.astro';
 ---
 
 <Layout title="Grant Holle">
-  <main class="relative z-0 flex pt-36 md:pt-0 md:items-center justify-center min-h-screen bg-gradient-to-tr from-fuchsia-400 via-fuchsia-300 to-cyan-400 px-4 overflow-hidden">
-    <div class="max-w-md mx-auto w-full relative z-0">
+  <main class="relative z-0 flex py-6 md:items-center justify-center min-h-screen bg-gradient-to-tr from-fuchsia-400 via-fuchsia-300 to-cyan-400 px-4 overflow-hidden">
+    <div class="max-w-xl mx-auto w-full relative z-0">
       <Card>
-        <h1 class="text-3xl font-bold">sup.</h1>
+        <h1 class="text-3xl font-bold permanent-marker">Yo.</h1>
         <p>My name is Grant. I love building software for the web, among other things.</p>
         <p>I've lived abroad for the last 9 years (7 in China, 2 in the UAE), but have recently made my way back to the US.</p>
         <p>I'm building <a href="https://www.archboard.io" target="_blank">Archboard</a>, an open source company whose applications make things easier for schools. I'm also helping build <a href="https://app.teachrn.com" target="_blank">TeachRN</a>, a nurse mentorship marketplace.</p>
@@ -23,8 +23,8 @@ import Card from '../components/Card.astro';
     </div>
 
     <div id="wrapper" class="absolute bottom-0 right-0 pr-4 z-10 translate-y-[92%] lg:hover:translate-y-[80%] transition ease-in-out duration-150">
-      <div id="bubble" class="invisible opacity-0 transition duration-250 bg-white w-[350px] rounded px-6 py-12 border-4 border-black text-center absolute -top-[134px] -left-[160px] text-4xl -rotate-6 permanent-marker">
-        <blockquote class="">You know… We live in a society!</blockquote>
+      <div id="bubble" class="invisible opacity-0 transition duration-250 bg-white w-[325px] rounded px-6 py-10 border-4 border-black text-center absolute -top-[165px] -left-[160px] text-4xl -rotate-6 permanent-marker">
+        <blockquote class="">You know… We're living in a society!</blockquote>
       </div>
       <button class="relative z-10 block active:outline-none" id="george">
         <span class="sr-only">Show George Costanza</span>
@@ -62,38 +62,23 @@ import Card from '../components/Card.astro';
       el.classList.toggle(c)
     }
   }
-  function toggleBackdrop() {
-    const backdrop = document.getElementById('backdrop')
+  function toggleVisibility(el) {
     const opacityClasses = ['opacity-0']
 
-    if (backdrop.classList.contains('invisible')) {
-      backdrop.classList.remove('invisible')
-      toggleClasses(backdrop, opacityClasses)
+    if (el.classList.contains('invisible')) {
+      el.classList.remove('invisible')
+      toggleClasses(el, opacityClasses)
     } else {
-      toggleClasses(backdrop, opacityClasses)
+      toggleClasses(el, opacityClasses)
       setTimeout(() => {
-        backdrop.classList.add('invisible')
-      }, 250)
-    }
-  }
-  function toggleBubble() {
-    const bubble = document.getElementById('bubble')
-    const classes = ['opacity-0']
-
-    if (bubble.classList.contains('invisible')) {
-      bubble.classList.remove('invisible')
-      toggleClasses(bubble, classes)
-    } else {
-      toggleClasses(bubble, classes)
-      setTimeout(() => {
-        bubble.classList.add('invisible')
+        el.classList.add('invisible')
       }, 250)
     }
   }
 
   document.getElementById('george').addEventListener('click', (el) => {
-    toggleBackdrop()
-    toggleBubble()
+    toggleVisibility(document.getElementById('backdrop'))
+    toggleVisibility(document.getElementById('bubble'))
     toggleClasses(document.getElementById('wrapper'), ['translate-y-[92%]', 'lg:hover:translate-y-[80%]', 'translate-y-[15%]'])
   })
 </script>
