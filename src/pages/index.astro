@@ -4,11 +4,11 @@ import Card from '../components/Card.astro';
 ---
 
 <Layout title="Grant Holle">
-  <main class="relative flex pt-36 md:pt-0 md:items-center justify-center min-h-screen animate-giddyup bg-gradient-to-tr from-fuchsia-400 to-cyan-400 px-4">
-    <div class="max-w-md mx-auto w-full relative z-10">
+  <main class="relative z-0 flex pt-36 md:pt-0 md:items-center justify-center min-h-screen bg-gradient-to-tr from-fuchsia-400 via-fuchsia-300 to-cyan-400 px-4 overflow-hidden">
+    <div class="max-w-md mx-auto w-full relative z-0">
       <Card>
-        <h1 class="text-3xl font-bold">hey.</h1>
-        <p>My name is Grant. I think the internet is 💯 and I love to create for it. Not in the "destroy modern society with social media" sort of way. More like the "make my life or job easier" way.</p>
+        <h1 class="text-3xl font-bold">sup.</h1>
+        <p>My name is Grant. I love building software for the web, among other things.</p>
         <p>I've lived abroad for the last 9 years (7 in China, 2 in the UAE), but have recently made my way back to the US.</p>
         <p>I'm building <a href="https://www.archboard.io" target="_blank">Archboard</a>, an open source company whose applications make things easier for schools. I'm also helping build <a href="https://app.teachrn.com" target="_blank">TeachRN</a>, a nurse mentorship marketplace.</p>
         <p>Check out my <a href="https://github.com/grantholle" target="_blank">GitHub</a> to view my recent activity on public repositories or connect on <a href="https://www.linkedin.com/in/grant-holle/" target="_blank">LinkedIn</a>.</p>
@@ -21,11 +21,79 @@ import Card from '../components/Card.astro';
         </ul>
       </Card>
     </div>
+
+    <div id="wrapper" class="absolute bottom-0 right-0 pr-4 z-10 translate-y-[92%] lg:hover:translate-y-[80%] transition ease-in-out duration-150">
+      <div id="bubble" class="invisible opacity-0 transition duration-250 bg-white w-[350px] rounded px-6 py-12 border-4 border-black text-center absolute -top-[134px] -left-[160px] text-4xl -rotate-6 permanent-marker">
+        <blockquote class="">You know… We live in a society!</blockquote>
+      </div>
+      <button class="relative z-10 block active:outline-none" id="george">
+        <span class="sr-only">Show George Costanza</span>
+        <img src="/society.webp" alt="George Costanza" />
+      </button>
+    </div>
+    <div id="backdrop" class="invisible transition ease-in-out duration-200 opacity-0 fixed z-0 inset-0 bg-cyan-400/50 backdrop-filter backdrop-blur-md px-2 h-screen"></div>
   </main>
 </Layout>
 
 <style>
+  @font-face {
+    font-family: 'Permanent Marker';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(/permanentmarker.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+
+  .permanent-marker {
+    font-family: "Permanent Marker", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
   a {
     @apply font-semibold text-fuchsia-600 hover:text-cyan-600 hover:underline transition;
   }
 </style>
+
+<script>
+  function toggleClasses(el, classes) {
+    for (const c of classes) {
+      el.classList.toggle(c)
+    }
+  }
+  function toggleBackdrop() {
+    const backdrop = document.getElementById('backdrop')
+    const opacityClasses = ['opacity-0']
+
+    if (backdrop.classList.contains('invisible')) {
+      backdrop.classList.remove('invisible')
+      toggleClasses(backdrop, opacityClasses)
+    } else {
+      toggleClasses(backdrop, opacityClasses)
+      setTimeout(() => {
+        backdrop.classList.add('invisible')
+      }, 250)
+    }
+  }
+  function toggleBubble() {
+    const bubble = document.getElementById('bubble')
+    const classes = ['opacity-0']
+
+    if (bubble.classList.contains('invisible')) {
+      bubble.classList.remove('invisible')
+      toggleClasses(bubble, classes)
+    } else {
+      toggleClasses(bubble, classes)
+      setTimeout(() => {
+        bubble.classList.add('invisible')
+      }, 250)
+    }
+  }
+
+  document.getElementById('george').addEventListener('click', (el) => {
+    toggleBackdrop()
+    toggleBubble()
+    toggleClasses(document.getElementById('wrapper'), ['translate-y-[92%]', 'lg:hover:translate-y-[80%]', 'translate-y-[15%]'])
+  })
+</script>

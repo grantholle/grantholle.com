@@ -16,7 +16,7 @@ export default {
         },
       }),
       animation: {
-        giddyup: 'giddyup 10s ease infinite',
+        giddyup: 'giddyup 8s ease infinite',
       },
     },
   },
