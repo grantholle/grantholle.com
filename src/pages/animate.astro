@@ -5,48 +5,76 @@
   <meta name="viewport" content="width=device-width" />
   <title>Document</title>
 </head>
-<body>
+<body class="bg-gray-100">
   <style>
     @keyframes standing {
-      0% { background-position: 0 0; width: 50px; }
-      25% { background-position: -50px 0; width: 50px; }
-      50% { background-position: -100px 0; width: 44px; }
-      75% { background-position: -50px 0; width: 50px; }
-      100% { background-position: 0 0; width: 50px }
+      0% { background-position: 0 0; }
+      25% { background-position: -42px 0; }
+      50% { background-position: -84px 0; }
+      75% { background-position: -42px 0; }
+      100% { background-position: 0 0 }
     }
 
     @keyframes walking {
-      0% { background-position: 0 0; width: 36px; }
-      16.66% { background-position: -36px 0; width: 45px; }
-      33.33% { background-position: -81px 0; width: 53px; }
-      50% { background-position: -134px 0; width: 40px; }
-      66.66% { background-position: -174px 0; width: 42px; }
-      83.33% { background-position: -216px 0; width: 49px; }
-      /* 70% { background-position: 0 0; width: 36px; } */
-      100% { background-position: 0 0; width: 36px }
+      0% { background-position: 0 0; }
+      16.66% { background-position: -45px 0; }
+      33.33% { background-position: -90px 0; }
+      50% { background-position: -135px 0; }
+      66.66% { background-position: -180px 0; }
+      83.33% { background-position: -225px 0; }
+      100% { background-position: 0 0; }
+    }
+
+    @keyframes punch {
+      0% { background-position: 0 0; }
+      12.5% { background-position: -100px 0; }
+      25% { background-position: -200px 0; }
+      37.5% { background-position: -300px 0; }
+      50% { background-position: -400px 0; }
+      62.5% { background-position: -500px 0; }
+      75% { background-position: -600px 0; }
+      87.5% { background-position: -700px 0; }
+      100% { background-position: 0 0; }
+    }
+
+    @keyframes punch2 {
+      0% { background-position: 0 0; }
+      12.5% { background-position: -100px 0; transform: translateX(-25px); }
+      25% { background-position: -200px 0; transform: translateX(-50px); }
+      37.5% { background-position: -300px 0; transform: translateX(-50px); }
+      50% { background-position: -400px 0; transform: translateX(-75px); }
+      62.5% { background-position: -500px 0; transform: translateX(-100px); }
+      75% { background-position: -600px 0; transform: translateX(-100px); }
+      87.5% { background-position: -700px 0; transform: translateX(-100px); }
+      100% { background-position: 0 0; }
     }
 
     .standing {
-      animation: standing 1s steps(3) infinite;
+      animation: standing 800ms steps(3) infinite;
       animation-timing-function: steps(1);
     }
 
-    .walking-left {
-      animation: walking 1.6s infinite;
+    .walking {
+      animation: walking 1.2s infinite;
       animation-timing-function: steps(1);
     }
 
-    .walking-right {
+    .punch {
+      animation: punch 1.2s infinite;
+      animation-timing-function: steps(1);
+      margin-left: -35px;
+    }
+
+    .right {
       transform: scaleX(-1);
-      animation: walking 1.6s infinite;
-      animation-timing-function: steps(1);
     }
   </style>
 
-  <div class="p-20 flex justify-between w-full">
-    <div class="standing bg-no-repeat bg-[url(/standing.png)] h-[77px]"></div>
-    <div class="walking-left bg-no-repeat bg-[url(/walking.png)] h-[80px]"></div>
-    <div class="walking-right bg-no-repeat bg-[url(/walking.png)] h-[80px]"></div>
+  <div class="p-20 space-y-10">
+    <div class="standing bg-no-repeat bg-[url(/standing.png)] h-[77px] w-[42px]"></div>
+    <div class="walking bg-no-repeat bg-[url(/walking.png)] h-[80px] w-[45px]"></div>
+    <div class="walking bg-no-repeat bg-[url(/walking.png)] h-[80px] w-[45px]"></div>
+    <div class="punch bg-no-repeat bg-[url(/punch.png)] h-[103px] w-[100px]"></div>
   </div>
 </body>
 </html>
